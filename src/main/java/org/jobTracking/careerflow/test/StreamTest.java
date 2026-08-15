@@ -24,10 +24,6 @@ public class StreamTest {
                 .filter(app -> app.getStatus() == ApplicationStatus.APPLIED)
                 .map(JobApplication::getJobTitle)
                 .forEach(System.out::println);
-        applications.stream()
-                .collect(Collectors.groupingBy(
-                        JobApplication::getCompanyName
-                ));
         Map<String,List<JobApplication>>groupedApplications=
                 applications.stream().collect(Collectors.groupingBy(
                         JobApplication::getCompanyName));
@@ -38,9 +34,6 @@ public class StreamTest {
                     System.out.println("-"+app.getJobTitle())
             );
         });
-        applications.stream();
-                Collectors.groupingBy(JobApplication::getStatus,
-                Collectors.counting());
                 Map<ApplicationStatus,Long>statusCounts=applications.stream()
                         .collect(
                                 Collectors.groupingBy(JobApplication::getStatus,
