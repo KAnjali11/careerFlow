@@ -2,17 +2,20 @@ package org.jobTracking.careerflow.entity;
 import org.jobTracking.careerflow.enums.ApplicationStatus;
 
 public class JobApplication {
-    private String JobTitle;
+    private String jobTitle;
     private String companyName;
     private ApplicationStatus status;
+    public JobApplication(){
+
+    }
     public JobApplication(String JobTitle,String companyName){
-        this.JobTitle=JobTitle;
+        this.jobTitle=jobTitle;
         this.companyName=companyName;
         this.status=ApplicationStatus.SAVED;
     }
 
     public String getJobTitle() {
-        return JobTitle;
+        return jobTitle;
     }
 
     public String getCompanyName() {

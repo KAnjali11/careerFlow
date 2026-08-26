@@ -1,6 +1,8 @@
 package org.jobTracking.careerflow.service;
+import org.jobTracking.careerflow.entity.JobApplication;
 import  org.springframework.stereotype.Service;
 import org.jobTracking.careerflow.repository.JobApplicationRepository;
+import java.util.List;
 @Service
 public class JobApplicationService {
 
@@ -16,5 +18,11 @@ public class JobApplicationService {
     }
     public String getLastSearchedCompany(){
         return lastSearchedCompany;
+    }
+    public JobApplication create(JobApplication application){
+        return jobApplicationRepository.save(application);
+    }
+    public List<JobApplication>getAll(){
+        return jobApplicationRepository.FindAll();
     }
 }
