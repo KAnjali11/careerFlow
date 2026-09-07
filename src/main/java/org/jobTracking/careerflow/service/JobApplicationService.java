@@ -25,4 +25,7 @@ public class JobApplicationService {
     public List<JobApplication>getAll(){
         return jobApplicationRepository.FindAll();
     }
+    public JobApplication getById(int id){
+        return jobApplicationRepository.getById(id);
+    }
 }

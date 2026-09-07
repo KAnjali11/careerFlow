@@ -1,11 +1,8 @@
 package org.jobTracking.careerflow.controller;
 import org.jobTracking.careerflow.entity.JobApplication;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import  org.jobTracking.careerflow.service.JobApplicationService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -28,6 +25,9 @@ public class JobApplicationController {
     public List<JobApplication>getAll(){
         return jobApplicationService.getAll();
     }
-
+    @GetMapping("/{id}")
+    public JobApplication getById(@PathVariable int id){
+        return jobApplicationService.getById(id);
+    }
 
 }
