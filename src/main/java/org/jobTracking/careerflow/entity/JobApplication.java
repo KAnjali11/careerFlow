@@ -32,7 +32,7 @@ public class JobApplication {
         this.companyName = companyName;
         this.status = ApplicationStatus.SAVED;
     }
-
+    public long getId() { return id; }
     public String getJobTitle() {
         return jobTitle;
     }

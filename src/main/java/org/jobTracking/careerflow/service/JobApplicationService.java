@@ -26,9 +26,10 @@ public class JobApplicationService {
         return jobApplicationRepository.save(application);
     }
     public List<JobApplication>getAll(){
-        return jobApplicationRepository.FindAll();
+        return jobApplicationRepository.findAll();
     }
-    public JobApplication getById(int id){
-        return jobApplicationRepository.getById(id);
+    public JobApplication getById(long id){
+        return jobApplicationRepository.findById(id)
+                .orElse(null);
     }
 }
